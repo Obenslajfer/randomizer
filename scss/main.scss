@@ -1,0 +1,94 @@
+// VARIABLES
+$myFont: 'Calistoga', sans-serif;
+$smallFontSize: 20px;
+$bigFontSize: 50px;
+$mainColor: #ff6b81;
+
+// MEDIA QUERY MIXINS
+@mixin for-phone-only {
+   @media (max-width: 599px) { @content; }
+ }
+ @mixin for-tablet-portrait-up {
+   @media (min-width: 730px) { @content; }
+ }
+ @mixin for-tablet-landscape-up {
+   @media (min-width: 973px) { @content; }
+ }
+
+ // TRANSFORM MIXIN
+ @mixin scale($scale) {
+    -moz-transform: $scale;
+    -o-transform: $scale;
+    -ms-transform: $scale;
+    -webkit-transform: $scale;
+    transform: $scale;
+}
+
+// CSS FOR THE HEAD-PART OF THE BODY
+.header{
+    text-align: center;
+    font-size: $bigFontSize;
+    color: $mainColor;
+    font-family: $myFont;
+
+  #searchinput{
+    font-size: $smallFontSize;
+    background-color: transparent;
+    border-style: none;
+    color: grey;
+  }
+
+  #srcbtn{
+    font-size: $smallFontSize;
+    background-color: transparent;
+    border-style: none;
+	  color: $mainColor;
+  }
+  
+  #srcbtn:hover{
+    cursor: pointer;
+    @include scale(scale(1.1));	
+  }
+}
+
+// CSS FOR THE CONTAINER WHERE Ix  CREATE ALL THE DIVS.
+#container{
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   align-content: center;
+   text-align: center;
+   justify-content: space-evenly;
+   word-wrap: break-word;
+}
+
+// CSS FOR THE IMAGES BEING SHOWN AT THE FRONTPAGE
+.frontimg{
+    width: 300px;
+    height: 300px;
+    box-shadow: 10px 10px 0px 0px #ff6b81;   
+    border: 30px solid #f1f2f6;
+}
+
+// MAKING THE PICTURES MORE ALIVE WITH A HOVER EFFECT
+.frontimg:hover {
+    cursor: pointer;
+    @include scale(scale(1.1));
+}
+
+// CLASS THAT CONTROLS ALL THE DIVS CREATED IN JAVASCRIPT, AND MAKING THE COMPATABLE WITH DIFFERENT SCREENS.
+[class*="myDiv"]{
+	margin-bottom: 25px;
+	margin-top: 25px;
+		@include for-phone-only{
+			width: 100%;
+		}
+		
+		@include for-tablet-portrait-up(){
+			width: 50%;
+		}
+
+		@include for-tablet-landscape-up(){
+			width: 30%;
+		} 
+}

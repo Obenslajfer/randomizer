@@ -1,0 +1,58 @@
+.header {
+  text-align: center;
+  font-size: 50px;
+  color: #ff6b81;
+  font-family: "Calistoga", sans-serif; }
+  .header #searchinput {
+    font-size: 20px;
+    background-color: transparent;
+    border-style: none;
+    color: grey; }
+  .header #srcbtn {
+    font-size: 20px;
+    background-color: transparent;
+    border-style: none;
+    color: #ff6b81; }
+  .header #srcbtn:hover {
+    cursor: pointer;
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  justify-content: space-evenly;
+  word-wrap: break-word; }
+
+.frontimg {
+  width: 300px;
+  height: 300px;
+  box-shadow: 10px 10px 0px 0px #ff6b81;
+  border: 30px solid #f1f2f6; }
+
+.frontimg:hover {
+  cursor: pointer;
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+
+[class*="myDiv"] {
+  margin-bottom: 25px;
+  margin-top: 25px; }
+  @media (max-width: 599px) {
+    [class*="myDiv"] {
+      width: 100%; } }
+  @media (min-width: 730px) {
+    [class*="myDiv"] {
+      width: 50%; } }
+  @media (min-width: 973px) {
+    [class*="myDiv"] {
+      width: 30%; } }
